@@ -17,7 +17,8 @@ class ItemController extends Controller {
      */
     public function addAction(Request $request) {
 
-        $itemName = $request->request->get('name');
+        $data = json_decode($request->getContent());
+        $itemName = $data->name;
 
         $item = new Item();
         $item->setName($itemName);
