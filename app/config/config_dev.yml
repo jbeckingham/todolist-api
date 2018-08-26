@@ -1,7 +1,12 @@
 imports:
-    - { resource: parameters.yml 
+    - { resource: parameters.yml }
     - { resource: config.yml }
 
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: '%kernel.project_dir%/app/shoppinglist.db'
+        charset: UTF8
 
 framework:
     router:
